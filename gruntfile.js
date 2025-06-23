@@ -84,7 +84,6 @@ module.exports = function(grunt){
     uglify: {
         target: {
             files: {
-                // Caminho CORRIGIDO para o arquivo de origem
                 'dist/scripts/main.min.js': 'src/scripts/main.js'
             }
         }
@@ -96,7 +95,6 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-
-    // Tarefa build corrigida para garantir a ordem correta
+    
     grunt.registerTask('build',['less:production', 'htmlmin:dist', 'uglify', 'replace:dist', 'clean']);
 }
